@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: placidway-chatbot
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: LLM_API_KEY
+        sync: false
+      - key: CRAWLER_CONTACT
+        sync: false
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: LLM_MODEL
+        value: llama-3.3-70b-versatile
